@@ -155,3 +155,9 @@ https://sam0989422478.github.io/taiwan-labor-news/
 - 前端使用瀏覽器所在裝置的本地時區自動換算顯示（標示「訪客當地時間」），而非每次開頁就顯示現在的時間。
 - 發布日期（各文章的 `date`）不會因訪客換時區而被改寫；新聞時間與資料更新時間是不同概念。
 - 前端暫時無法讀取 `editorial.json` 時使用原始備援資料並註明「備援資料」；以資料檔時間為準，不代表即時抓取新聞。
+
+## 2026-11-17 每日更新排程故障修復
+- 每天台灣時間 09:00 的 GitHub Actions `.github/workflows/update-news.yml` 仍存在。
+- 檢查 2026-11-17 19:37 台灣時間的手動執行，發現新聞擷取成功但 `scripts/build_sitemap.py` 使用錯誤的 `ElementTree(root,encoding=...,xml_declaration=...)` 導致工作流程失敗，資料沒有提交。
+- 已修改為 `ElementTree(root).write(path,encoding='utf-8',xml_declaration=True)`；修正已提交，但仍需下次執行才能驗證整體成功。
+- 每日定時執行不保證一定有新文章；若無符合來源或查證條件的題材，保留舊內容。建議持續在 Actions 查看成功／失敗狀態。
