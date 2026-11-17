@@ -114,6 +114,11 @@ function editorialImage(n){
  return ({'工資工時':'assets/story-payroll.svg','勞資關係':'assets/story-dispute.svg','職安職災':'assets/story-safety-scene.svg','政策法規':'assets/news-policy.svg'})[n.category]||'assets/news-policy.svg';
 }
 
+function formatVisitorTime(iso){
+ const date=new Date(iso);
+ if(!iso||Number.isNaN(date.getTime()))return '時間未提供';
+ return new Intl.DateTimeFormat('zh-TW',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(date)+'（訪客當地時間）';
+}
 function render(){
  const q=search.value.trim().toLowerCase();
  const list=articles.filter(x=>(cat==='全部'||x.category===cat)&&((x.title+' '+x.summary).toLowerCase().includes(q)));
@@ -138,8 +143,8 @@ function render(){
  pagination.append(text('span','第 '+currentPage+'／'+totalPages+' 頁','pagesummary'));
 }
 search.addEventListener('input',()=>{currentPage=1;render()});document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelector('.filter.active')?.classList.remove('active');b.classList.add('active');cat=b.dataset.cat;currentPage=1;render()}));
-fetch('data/editorial.json?t='+Date.now()).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{articles=Array.isArray(d.articles)&&d.articles.length?d.articles:embeddedEditorial.articles;document.getElementById('updated').textContent=d.updated_at?'更新：'+new Date(d.updated_at).toLocaleString('zh-TW',{timeZone:'Asia/Taipei'}):'等待首次新聞編輯';render()}).catch(()=>{articles=embeddedEditorial.articles||[];document.getElementById('updated').textContent='新聞資料（備援版本）';render()});
-fetch('data/news.json?t='+Date.now()).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{const box=document.getElementById('notice-results');box.replaceChildren();(d.articles||[]).slice(0,10).forEach(n=>{const row=text('div','','notice-row'),time=text('time',n.date||''),link=text('a',n.title);link.href=n.url;link.target='_blank';link.rel='noopener noreferrer';row.append(time,link);box.append(row)});document.getElementById('notice-updated').textContent=(d.articles||[]).length+' 則公告資料';if(!box.children.length)box.append(text('div','目前沒有公告資料。','empty'))}).catch(()=>document.getElementById('notice-updated').textContent='公告暫時無法載入');
+fetch('data/editorial.json?t='+Date.now()).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{articles=Array.isArray(d.articles)&&d.articles.length?d.articles:embeddedEditorial.articles;document.getElementById('updated').textContent=d.updated_at?'新聞資料更新：'+formatVisitorTime(d.updated_at):'尚無更新紀錄';render()}).catch(()=>{articles=embeddedEditorial.articles||[];document.getElementById('updated').textContent='新聞資料更新：'+formatVisitorTime(embeddedEditorial.updated_at)+'（備援資料）';render()});
+fetch('data/news.json?t='+Date.now()).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{const box=document.getElementById('notice-results');box.replaceChildren();(d.articles||[]).slice(0,10).forEach(n=>{const row=text('div','','notice-row'),time=text('time',n.date||''),link=text('a',n.title);link.href=n.url;link.target='_blank';link.rel='noopener noreferrer';row.append(time,link);box.append(row)});document.getElementById('notice-updated').textContent=(d.articles||[]).length+' 則公告 · 資料更新：'+formatVisitorTime(d.updated_at);if(!box.children.length)box.append(text('div','目前沒有公告資料。','empty'))}).catch(()=>document.getElementById('notice-updated').textContent='公告暫時無法載入');
 </script>
 <details class="float-contact">
 <summary aria-label="展開聯絡我們選單" title="聯絡我們">☎</summary>
