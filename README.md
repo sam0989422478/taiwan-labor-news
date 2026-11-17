@@ -1,28 +1,28 @@
 # 台灣勞基新聞網
 
-繁體中文勞動新聞網站，適合手機瀏覽。新聞列表以勞動部官方 RSS 為來源，保留原始連結；本站不是勞動部官方網站。
+公開網站：<https://sam0989422478.github.io/taiwan-labor-news/>
 
-## 公開網站
-預定網址：https://sam0989422478.github.io/taiwan-labor-news/
+**📘 如果你刪除了 ChatGPT 聊天、換了聊天室，或要讓別人接手網站：請先閱讀 [HANDOFF.md（網站交接與復原手冊）](HANDOFF.md)。** 裡面包含 GitHub 授權、每日更新、網站結構、Google SEO、備份建議，以及可直接複製到新 ChatGPT 聊天的交接指令。
 
-## 首次啟用 GitHub Pages（儲存庫擁有者操作）
-1. 進入 GitHub 儲存庫 **Settings → Pages**。
-2. **Build and deployment → Source** 選擇 **Deploy from a branch**。
-3. **Branch** 選擇 **main**、資料夾選 **/(root)**，按 **Save**。
-4. 等待 Pages 佈署完成後，開啟上述網站網址。
+## 目前功能
 
-## 每日新聞自動更新
-GitHub Actions 工作流程：`.github/workflows/update-news.yml`
-- 台灣時間每天 09:00（UTC 01:00）排程，GitHub Actions 可能延後執行。
-- 可在 **Actions → 每日更新勞動新聞 → Run workflow** 手動首次執行。
-- 工作流程執行 `python scripts/update_news.py`，更新 `data/news.json` 並提交到 main。
-- 若 RSS 來源無法存取或未回傳有效文章，程式會保留既有資料並顯示工作流程失敗，不會捏造新聞。
-- 若 Actions 沒有寫入權限，請到 **Settings → Actions → General → Workflow permissions** 確保允許寫入（若組織政策允許）。
+- 站內「最新新聞」：編輯導讀、分類、搜尋、每頁 12 篇分頁
+- 獨立「勞動部公告」：連至官方來源
+- 新聞文章閱讀頁：`article.html?id=...`
+- 首頁與文章頁固定右下角「聯絡我們」按鈕
+- GitHub Actions 每日台灣時間 09:00 嘗試更新新聞並重建 Sitemap
+- Google Search Console 驗證檔：`google453320c54a20658d.html`（請勿刪除）
 
-## 聯絡資訊
-- 孫顧問：0989-422-478
-- LINE 官方帳號：https://lin.ee/NgRW9iS
-- Facebook 粉專連結：待補入 `index.html`
+## 關鍵入口
 
-## 注意
-這是免費靜態網站與來源導讀，沒有串接自動生成 AI 長篇新聞、AI 圖像或 Facebook/Instagram 自動發布。請在實際執行首次工作流程後檢查官方 RSS 是否可用。
+- [GitHub Actions 排程](https://github.com/sam0989422478/taiwan-labor-news/actions)
+- [GitHub Pages 設定](https://github.com/sam0989422478/taiwan-labor-news/settings/pages)
+- [Google Sitemap](https://sam0989422478.github.io/taiwan-labor-news/sitemap.xml)
+
+## 重要說明
+
+目前自動新聞以 RSS 來源標題、日期及來源資訊整理編輯導讀，**不能視為已核實所有原文內容的深度報導**；請保留來源連結，重大勞資爭議、裁罰與法規變動應核對原始資料。
+
+本儲存庫為公開可讀，請勿上傳密碼、金鑰或存取權杖。Facebook 粉專目前只使用連結，沒有啟用需管理員授權的貼文同步。
+
+完整維護與復原說明請閱讀 **[HANDOFF.md](HANDOFF.md)**。
