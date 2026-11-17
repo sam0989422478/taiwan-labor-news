@@ -52,11 +52,11 @@ header{box-shadow:0 1px 0 #e7ebf0}
 .head{min-height:70px}.brand-logo{width:44px;height:44px;object-fit:contain}
 .brand{font-size:1.22rem}.brand small{font-size:.64rem}
 nav a{font-size:.88rem}
-.hero{background:#f7f9fb;color:var(--navy);border-bottom:1px solid #e7ebf0;padding:28px 0}
-.hero-label{color:#b63448;letter-spacing:.07em}.hero h1{font-size:clamp(1.6rem,3.7vw,2.15rem);margin:7px 0}
-.hero h1 br{display:none}.hero p{color:#65788b;font-size:.89rem}
+.hero{background:linear-gradient(115deg,#102c49 0%,#214766 100%);color:#fff;border-bottom:0;padding:36px 0 40px}
+.hero-label{color:#ffb2b9;letter-spacing:.07em}.hero h1{font-size:clamp(1.6rem,3.7vw,2.15rem);margin:7px 0}
+.hero h1 br{display:none}.hero p{color:#dce8f1;font-size:.89rem}
 .shortcuts{margin-top:17px}.quick{font-size:.82rem;padding:7px 13px;border-radius:6px;border-color:#dae2eb}
-.quick.primary{background:var(--navy);border-color:var(--navy)}.quick.outline{color:var(--navy);border-color:#cbd6e2}
+.quick.primary{background:var(--navy);border-color:var(--navy)}.quick.outline{color:#fff;border-color:#92a8bb;background:transparent}
 main{padding-top:29px}.section-head h2{font-size:1.33rem}.controls{margin-bottom:12px}.controls input{font-size:.9rem;padding:9px 12px}.filter{font-size:.82rem;padding:8px 10px}
 .grid{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
 .story{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:18px;align-items:center;position:relative;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:17px 0;background:#fff;overflow:visible}
@@ -102,6 +102,16 @@ document.querySelector('#copyline').addEventListener('click',async()=>{try{await
 const results=document.getElementById('results'), search=document.getElementById('search');
 let articles=[],cat='全部',currentPage=1;const pageSize=12;document.getElementById('year').textContent=new Date().getFullYear();
 function text(tag,str,klass){const e=document.createElement(tag);e.textContent=str||'';if(klass)e.className=klass;return e}
+function editorialImage(n){
+ const title=n.title||'';
+ if(/育兒|子女|產假|親職|托育|育嬰/.test(title)) return 'assets/story-parenting.svg';
+ if(/投票|選舉|公投/.test(title)) return 'assets/story-voting.svg';
+ if(/職災|職安|職場安全|工安|勞檢/.test(title)) return 'assets/story-safety-scene.svg';
+ if(/勞資爭議|工會|調解|解僱|資遣|裁員/.test(title)) return 'assets/story-dispute.svg';
+ if(/薪水|薪資|工資|加班費|減工時|工時|最低工資/.test(title)) return 'assets/story-payroll.svg';
+ return ({'工資工時':'assets/story-payroll.svg','勞資關係':'assets/story-dispute.svg','職安職災':'assets/story-safety-scene.svg','政策法規':'assets/news-policy.svg'})[n.category]||'assets/news-policy.svg';
+}
+
 function render(){
  const q=search.value.trim().toLowerCase();
  const list=articles.filter(x=>(cat==='全部'||x.category===cat)&&((x.title+' '+x.summary).toLowerCase().includes(q)));
@@ -112,7 +122,7 @@ function render(){
  const totalPages=Math.ceil(list.length/pageSize);
  currentPage=Math.max(1,Math.min(currentPage,totalPages));
  const shown=list.slice((currentPage-1)*pageSize,currentPage*pageSize);
- shown.forEach(n=>{const a=text('article','','story'),stripe=text('div','','stripe'),body=text('div','','story-body'),t=text('span',n.category,'tag'),h=text('h3',n.title),desc=text('p',n.summary),foot=text('div','','story-bottom'),meta=text('span',(n.date||'')+' · 台灣勞基編輯整理'),link=text('a','閱讀本站報導');link.href='article.html?id='+encodeURIComponent(n.id);foot.append(meta,link);body.append(t,h,desc,foot);const art=text('div','','story-art');const img=document.createElement('img');img.loading='lazy';img.alt=(n.category||'勞動新聞')+'主題示意圖片';img.src=({'工資工時':'assets/news-wages.svg','勞資關係':'assets/news-relations.svg','職安職災':'assets/news-safety.svg','政策法規':'assets/news-policy.svg'})[n.category]||'assets/news-policy.svg';art.append(img);a.append(stripe,art,body);results.append(a)});
+ shown.forEach(n=>{const a=text('article','','story'),stripe=text('div','','stripe'),body=text('div','','story-body'),t=text('span',n.category,'tag'),h=text('h3',n.title),desc=text('p',n.summary),foot=text('div','','story-bottom'),meta=text('span',(n.date||'')+' · 台灣勞基編輯整理'),link=text('a','閱讀本站報導');link.href='article.html?id='+encodeURIComponent(n.id);foot.append(meta,link);body.append(t,h,desc,foot);const art=text('div','','story-art');const img=document.createElement('img');img.loading='lazy';img.alt='依新聞主題製作的編輯示意圖，非事件現場照片';img.src=editorialImage(n);art.append(img);a.append(stripe,art,body);results.append(a)});
  count.textContent='共 '+list.length+' 篇 · 每頁 '+pageSize+' 篇';
  if(totalPages<=1)return;
  function addButton(label,page,disabled,active){
