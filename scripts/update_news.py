@@ -129,7 +129,11 @@ def main():
     try:
         official = fetch_official()
         if official:
-            save_json(OFFICIAL,{"updated_at":now.isoformat(),"articles":official})
+            if official != existing_official.get("articles", []):
+                save_json(OFFICIAL,{"updated_at":now.isoformat(),"articles":official})
+                print("Official notices changed; recorded actual update time")
+            else:
+                print("Official notices unchanged; keeping previous update time")
     except Exception as exc:
         print(f"Official RSS unavailable, keep old data: {type(exc).__name__}")
     media = fetch_media()
@@ -147,7 +151,10 @@ def main():
         if added >= 4: break
     articles = sorted(existing_articles.values(),key=lambda a:(a["date"],a.get("published_at","")),reverse=True)[:2000]
     if not articles: raise RuntimeError("No current articles available; refusing fabricated news")
-    save_json(EDITORIAL,{"updated_at":now.isoformat(),"articles":articles})
-    print(f"Editorial update: {added} new, {len(articles)} stored")
+    if articles != existing.get("articles", []):
+        save_json(EDITORIAL,{"updated_at":now.isoformat(),"articles":articles})
+        print(f"Editorial updated at {now.isoformat()}: {added} new, {len(articles)} stored")
+    else:
+        print(f"No new editorial changes; keeping previous update time ({len(articles)} articles)")
 
 if __name__=="__main__": main()
