@@ -19,13 +19,21 @@ jobs:
           python-version: '3.12'
       - name: Generate sourced editorial digest and official notices
         run: python scripts/update_news.py
+      - name: Install image processing library
+        run: python -m pip install Pillow>=10.0.0
+      - name: Generate up to 3 editorial photos
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          IMAGE_MODEL: gpt-image-1.5
+          MAX_DAILY_IMAGES: "3"
+        run: python scripts/generate_images.py
       - name: Rebuild Google sitemap
         run: python scripts/build_sitemap.py
       - name: Publish updated news data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/news.json data/editorial.json sitemap.xml
+          git add data/news.json data/editorial.json sitemap.xml assets/generated/
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh daily editorial news and official notices"
             git pull --rebase origin main
