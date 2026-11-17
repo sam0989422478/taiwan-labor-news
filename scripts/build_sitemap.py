@@ -17,5 +17,5 @@ for item in entries:
     if identifier:
         add(BASE+"article.html?id="+quote(identifier,safe=""),item.get("date"))
 indent(root,space="  ")
-ElementTree(root,encoding="utf-8",xml_declaration=True).write(ROOT/"sitemap.xml")
+ElementTree(root).write(ROOT/"sitemap.xml",encoding="utf-8",xml_declaration=True)
 print(f"Sitemap entries: {len(entries)+1}")
