@@ -1,0 +1,59 @@
+name: Import labor news poster image
+on:
+  workflow_dispatch:
+    inputs:
+      image_url:
+        description: 'Public HTTPS URL of original PNG or JPEG'
+        required: true
+        type: string
+      filename:
+        description: 'Output file name, e.g. 2026-11-17-workplace-bullying.png'
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and validate image
+        env:
+          IMAGE_URL: ${{ inputs.image_url }}
+          FILENAME: ${{ inputs.filename }}
+        run: |
+          python3 - <<'PY'
+          import os, re, urllib.request, urllib.parse, pathlib, sys, ipaddress, socket
+          url=os.environ['IMAGE_URL']; filename=os.environ['FILENAME']
+          if not re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+\.(png|jpg|jpeg)', filename):
+              sys.exit('Invalid filename')
+          p=urllib.parse.urlparse(url)
+          if p.scheme!='https' or not p.hostname or p.username or p.password:
+              sys.exit('HTTPS public image URL required')
+          # Only allow established image/file hosting domains, never private network addresses.
+          allowed=('raw.githubusercontent.com','github.com','media.canva.com','images.unsplash.com','res.cloudinary.com','i.imgur.com','dl.dropboxusercontent.com')
+          if p.hostname not in allowed:
+              sys.exit('Image host not on allowlist')
+          req=urllib.request.Request(url,headers={'User-Agent':'TaiwanLaborNewsImageImporter/1.0'})
+          with urllib.request.urlopen(req,timeout=30) as resp:
+              data=resp.read(15*1024*1024+1)
+          if len(data)>15*1024*1024: sys.exit('Image exceeds 15 MB')
+          is_png=data.startswith(b'\x89PNG\r\n\x1a\n')
+          is_jpg=data.startswith(b'\xff\xd8\xff')
+          if not (is_png or is_jpg): sys.exit('Not a PNG/JPEG image')
+          if filename.endswith('.png') and not is_png: sys.exit('Extension does not match PNG')
+          if filename.endswith(('.jpg','.jpeg')) and not is_jpg: sys.exit('Extension does not match JPEG')
+          dest=pathlib.Path('assets')/filename
+          dest.parent.mkdir(parents=True,exist_ok=True)
+          dest.write_bytes(data)
+          print('Saved',dest,len(data),'bytes')
+          PY
+      - name: Commit image
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/
+          if ! git diff --cached --quiet; then
+            git commit -m "Import labor news poster"
+            git push
+          fi
