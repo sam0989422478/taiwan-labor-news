@@ -99,9 +99,12 @@ def main():
         if not 0 <= (now.date() - date).days <= 3:
             continue
         eligible.append(item)
+    already_today = sum(1 for x in articles if (x.get("image_generated_at") or "").startswith(now.date().isoformat()))
     made = 0
+    remaining = max(0, MAX_PER_DAY - already_today)
+    print(f"Daily remaining image budget: {remaining}")
     for item in eligible:
-        if made >= MAX_PER_DAY:
+        if made >= remaining:
             break
         slug = re.sub(r"[^a-zA-Z0-9_-]", "-", str(item.get("id", "")))[:65]
         if not slug:
@@ -117,6 +120,7 @@ def main():
             path.write_bytes(result)
             item["image"] = f"assets/generated/{filename}"
             item["image_note"] = IMAGE_NOTE
+            item["image_generated_at"] = now.isoformat()
             made += 1
             print(f"Generated illustration for {slug} ({len(result)} bytes)")
         except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ValueError, KeyError, OSError) as error:
@@ -124,7 +128,7 @@ def main():
             print(f"Could not generate illustration for {slug}: {type(error).__name__}; will use topic artwork")
     if made or any(x.get("image") for x in eligible):
         FILE.write_text(json.dumps(content, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Generated {made}/{MAX_PER_DAY} new illustrations")
+    print(f"Generated {made} new illustrations; {already_today + made}/{MAX_PER_DAY} today")
 
 if __name__ == "__main__":
     main()
