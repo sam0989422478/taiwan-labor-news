@@ -127,3 +127,12 @@ https://sam0989422478.github.io/taiwan-labor-news/
 - 使用者提供手機實機截圖，確認 A 版小圖列表已顯示，但偏好原本的深藍色首頁主視覺，因此已恢復深藍漸層 Hero，其他精簡列表樣式保留。
 - 使用者不喜歡多篇新聞重複同一張通用時鐘插畫，已另外製作 5 張主題情境 SVG（`assets/story-parenting.svg`, `story-voting.svg`, `story-payroll.svg`, `story-dispute.svg`, `story-safety-scene.svg`）。
 - 首頁和文章頁依新聞標題關鍵字選擇對應圖片（育兒、選舉、薪資、勞資爭議、職安等），非新聞現場照片。尚未做到每篇新聞都有唯一的 AI 生成封面，也未加入付費圖像 API。
+
+## 自動新聞示意照片 V2（2026-11-17）
+- 已加入 `scripts/generate_images.py`，使用 OpenAI Images API 依新聞標題選取不同台灣職場情境，輸出 1280×720 WebP 照片，並寫入 `data/editorial.json` 的 `image`、`image_note`、`image_generated_at`。
+- `.github/workflows/update-news.yml` 已設定每天新聞更新後執行圖片生成、更新網站地圖，最後提交 `assets/generated/` 與文章資料。每日最多 3 張，避免手動重新執行造成同日無限制生圖。
+- **尚未提供 `OPENAI_API_KEY` GitHub Actions Secret**：若未設定會跳過生圖，網站仍保留主題 SVG 示意插畫，不能宣稱已自動產出照片。
+- 使用者需要在 `https://github.com/sam0989422478/taiwan-labor-news/settings/secrets/actions` 新增 Repository Secret `OPENAI_API_KEY`。不要貼到聊天，也不要把金鑰寫入公開儲存庫。使用 API 可能收費，ChatGPT 訂閱費與 API 費用分開計算。
+- 使用模型預設為 `gpt-image-1.5`；若帳戶未開通該模型，需依可用 API 模型調整工作流程的 `IMAGE_MODEL`。
+- 前端首頁和文章頁優先使用符合安全檔名規則的 `assets/generated/*.webp`，缺圖或連結失敗時退回原主題插圖，文章加註「AI 生成示意圖，非新聞事件現場照片」。
+- 現有圖片範例是使用 ChatGPT 圖像工具於聊天室產生，**尚未上傳 GitHub 網站**；新的自動生圖必須等 Secret 設定與實際執行後才能在網站顯示。
