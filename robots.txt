@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sam0989422478.github.io/taiwan-labor-news/sitemap.xml
