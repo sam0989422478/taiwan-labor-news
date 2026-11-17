@@ -27,14 +27,20 @@
 
 完整維護與復原說明請閱讀 **[HANDOFF.md](HANDOFF.md)**。
 
-## 每日自動新聞圖片（已安裝，待啟用）
+## 免費生圖與照片上傳（不使用付費 API）
 
-網站首頁與文章頁已支援每篇不同的 16:9 WebP AI 寫實示意照片。GitHub Actions 每次最多產生 3 張，且每日上限 3 張；沒有成功生圖時使用原本的新聞主題插畫。
+使用 ChatGPT 內建的圖片生成功能，在聊天中先製作新聞情境照片，再由網站維護者將 WebP 圖片存入 `assets/generated/`，並於 `data/editorial.json` 的對應文章設定 `image` 路徑及 `image_note`。首頁與文章頁已支援顯示。
 
-**尚需網站擁有者自行新增 OpenAI API 金鑰：**
-- GitHub → [Actions Secrets](https://github.com/sam0989422478/taiwan-labor-news/settings/secrets/actions) → New repository secret
-- Name: `OPENAI_API_KEY`
-- Secret: 自己在 OpenAI API 平台建立的金鑰（不要在聊天中分享）
-- 然後到 [每日新聞工作流程](https://github.com/sam0989422478/taiwan-labor-news/actions/workflows/update-news.yml) 按 Run workflow 測試
+- 這是**逐篇製作、上傳**的工作方式；不會在 GitHub Actions 無人值守自動產生 AI 照片。
+- 每日新聞排程只更新新聞與 Sitemap，**不再呼叫 OpenAI 圖片 API，不需要任何金鑰**。
+- 尚未設定照片的文章，繼續顯示主題示意插畫。
+- 照片須標示「AI 生成示意圖，非新聞事件現場照片」。
 
-圖片會儲存在 `assets/generated/`，文章資料的 `image` 指向檔案，並標示「AI 生成示意圖，非新聞事件現場照片」。API 圖片生成會另行計費。未設定金鑰前，此功能不會自動生成照片。
+### 每次發布圖片的步驟
+
+1. 由 ChatGPT 產生新聞照片，轉成 16:9 WebP（例如 1280×720）。
+2. 上傳至儲存庫 `assets/generated/`，例如 `parenting-mother-daughter.webp`。
+3. 更新 `data/editorial.json` 中相應文章的 `image` 為 `assets/generated/parenting-mother-daughter.webp`。
+4. GitHub Pages 部署完成後，檢查首頁與文章頁是否出現新圖片。
+
+已停用的 `scripts/generate_images.py` 原型不會被排程呼叫，也不會產生費用。
