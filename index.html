@@ -122,7 +122,7 @@ function render(){
  const totalPages=Math.ceil(list.length/pageSize);
  currentPage=Math.max(1,Math.min(currentPage,totalPages));
  const shown=list.slice((currentPage-1)*pageSize,currentPage*pageSize);
- shown.forEach(n=>{const a=text('article','','story'),stripe=text('div','','stripe'),body=text('div','','story-body'),t=text('span',n.category,'tag'),h=text('h3',n.title),desc=text('p',n.summary),foot=text('div','','story-bottom'),meta=text('span',(n.date||'')+' · 台灣勞基編輯整理'),link=text('a','閱讀本站報導');link.href='article.html?id='+encodeURIComponent(n.id);foot.append(meta,link);body.append(t,h,desc,foot);const art=text('div','','story-art');const img=document.createElement('img');img.loading='lazy';img.alt='依新聞主題製作的編輯示意圖，非事件現場照片';img.src=editorialImage(n);art.append(img);a.append(stripe,art,body);results.append(a)});
+ shown.forEach(n=>{const a=text('article','','story'),stripe=text('div','','stripe'),body=text('div','','story-body'),t=text('span',n.category,'tag'),h=text('h3',n.title),desc=text('p',n.summary),foot=text('div','','story-bottom'),meta=text('span',(n.date||'')+' · 台灣勞基編輯整理'),link=text('a','閱讀本站報導');link.href='article.html?id='+encodeURIComponent(n.id);foot.append(meta,link);body.append(t,h,desc,foot);const art=text('div','','story-art');const img=document.createElement('img');img.loading='lazy';img.alt='新聞主題示意圖，非事件現場照片';img.src=(typeof n.image==='string'&&/^assets\/generated\/[a-zA-Z0-9_-]+\.webp$/.test(n.image))?n.image:editorialImage(n);img.onerror=()=>{img.onerror=null;img.src=editorialImage(n)};art.append(img);art.setAttribute("title","示意圖，非事件現場照片");a.append(stripe,art,body);results.append(a)});
  count.textContent='共 '+list.length+' 篇 · 每頁 '+pageSize+' 篇';
  if(totalPages<=1)return;
  function addButton(label,page,disabled,active){
