@@ -145,7 +145,7 @@ def main():
             existing_articles[article["id"]] = article
             added += 1
         if added >= 4: break
-    articles = sorted(existing_articles.values(),key=lambda a:(a["date"],a.get("published_at","")),reverse=True)[:90]
+    articles = sorted(existing_articles.values(),key=lambda a:(a["date"],a.get("published_at","")),reverse=True)[:2000]
     if not articles: raise RuntimeError("No current articles available; refusing fabricated news")
     save_json(EDITORIAL,{"updated_at":now.isoformat(),"articles":articles})
     print(f"Editorial update: {added} new, {len(articles)} stored")
