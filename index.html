@@ -28,6 +28,20 @@ main{padding:34px 0 55px}section{scroll-margin-top:18px}.section-head{display:fl
 .pagination{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:7px;margin-top:24px}.pagination button{border:1px solid var(--line);background:#fff;border-radius:7px;padding:8px 13px;cursor:pointer;font-weight:700;color:var(--navy)}.pagination button[aria-current="page"]{background:var(--navy);color:#fff}.pagination button:disabled{opacity:.35;cursor:not-allowed}.pagination .pagesummary{color:var(--muted);font-size:.86rem;margin:0 6px}.notice-list{background:white;border:1px solid var(--line);border-radius:10px;overflow:hidden}.notice-row{display:flex;align-items:start;gap:16px;padding:14px 17px;border-bottom:1px solid var(--line)}.notice-row:last-child{border-bottom:0}.notice-row time{flex:0 0 94px;font-size:.8rem;color:var(--muted)}.notice-row a{font-size:.93rem;font-weight:700;text-decoration:none;color:var(--navy)}.notice-row a:hover{text-decoration:underline}@media(max-width:640px){.notice-row{display:block}.notice-row time{display:block;margin-bottom:4px}}footer{background:#0b233a;color:#cbdae7;padding:22px 0;font-size:.8rem}footer p{margin:5px 0}footer a{color:#fff}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.head{padding:13px 0;display:block}.brand{display:inline-block;font-size:1.25rem}nav{margin-top:12px;gap:17px}nav a{font-size:.85rem}.hero{padding:34px 0}.hero h1{font-size:2rem}.grid{grid-template-columns:1fr}.controls input{width:100%;flex-basis:100%}.filter{font-size:.8rem;padding:8px 9px}.contact{padding:20px}.links a{flex:1;text-align:center;white-space:nowrap}}
+
+
+/* Always-visible contact button shared by home and news articles */
+.float-contact{position:fixed;right:18px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:9999;font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif}
+.float-contact summary{list-style:none;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 19px;border-radius:30px;background:#c93143;color:#fff;font-weight:800;box-shadow:0 4px 18px #07172b44;cursor:pointer;min-height:49px;font-size:15px}
+.float-contact summary::-webkit-details-marker{display:none}
+.float-contact summary:focus-visible,.float-contact a:focus-visible{outline:3px solid #f9b453;outline-offset:2px}
+.float-contact .float-menu{position:absolute;right:0;bottom:calc(100% + 11px);width:min(290px,calc(100vw - 35px));background:#fff;color:#1e3348;border:1px solid #dfe7ef;border-radius:13px;padding:16px;box-shadow:0 9px 32px #07172b33}
+.float-contact .float-heading{display:block;font-weight:850;font-size:17px;margin-bottom:9px}
+.float-contact .float-menu a{display:block;text-decoration:none;color:#153958;background:#f4f7fa;padding:10px 12px;border-radius:8px;font-weight:700;margin-top:7px;font-size:14px}
+.float-contact .float-menu a:first-of-type{background:#eaf5ee;color:#12683a}
+.float-contact .float-menu p{margin:10px 0 0;color:#6a7c90;font-size:12px;line-height:1.5}
+@media(max-width:640px){.float-contact{right:13px;bottom:calc(18px + env(safe-area-inset-bottom,0px))}.float-contact summary{padding:11px 15px;font-size:14px}}
+
 </style>
 </head>
 <body>
@@ -73,4 +87,15 @@ search.addEventListener('input',()=>{currentPage=1;render()});document.querySele
 fetch('data/editorial.json?t='+Date.now()).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{articles=Array.isArray(d.articles)&&d.articles.length?d.articles:embeddedEditorial.articles;document.getElementById('updated').textContent=d.updated_at?'更新：'+new Date(d.updated_at).toLocaleString('zh-TW',{timeZone:'Asia/Taipei'}):'等待首次新聞編輯';render()}).catch(()=>{articles=embeddedEditorial.articles||[];document.getElementById('updated').textContent='新聞資料（備援版本）';render()});
 fetch('data/news.json?t='+Date.now()).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{const box=document.getElementById('notice-results');box.replaceChildren();(d.articles||[]).slice(0,10).forEach(n=>{const row=text('div','','notice-row'),time=text('time',n.date||''),link=text('a',n.title);link.href=n.url;link.target='_blank';link.rel='noopener noreferrer';row.append(time,link);box.append(row)});document.getElementById('notice-updated').textContent=(d.articles||[]).length+' 則公告資料';if(!box.children.length)box.append(text('div','目前沒有公告資料。','empty'))}).catch(()=>document.getElementById('notice-updated').textContent='公告暫時無法載入');
 </script>
+<details class="float-contact">
+<summary aria-label="展開聯絡我們選單">☎ 聯絡我們</summary>
+<div class="float-menu">
+<span class="float-heading">聯絡台灣勞基</span>
+<a href="https://lin.ee/NgRW9iS" rel="noopener noreferrer">LINE 官方帳號</a>
+<a href="tel:+886989422478">電話：0989-422-478 孫顧問</a>
+<a href="https://www.facebook.com/lawkitaiwan/" target="_blank" rel="noopener noreferrer">Facebook 粉絲專頁</a>
+<a href="https://www.lawki.com.tw/site.html" target="_blank" rel="noopener noreferrer">台灣勞基官方網站</a>
+<p>LINE 若無法直接跳轉，可以複製連結到手機瀏覽器開啟。</p>
+</div>
+</details>
 </body></html>
