@@ -1,0 +1,25 @@
+/* 台灣勞基：網站內的免費問題初步回覆＋官方 LINE 真人客服 */
+.lawki-chat{position:fixed;right:15px;bottom:calc(82px + env(safe-area-inset-bottom,0px));z-index:10001;font:15px/1.55 system-ui,-apple-system,"Noto Sans TC",sans-serif;color:#24394e}
+.lawki-chat *{box-sizing:border-box}
+.lawki-chat-toggle{display:flex;align-items:center;gap:8px;background:#123b5b;color:#fff;border:0;border-radius:28px;padding:10px 14px;min-height:46px;box-shadow:0 4px 15px #08213b44;cursor:pointer;font:700 14px/1.4 inherit}
+.lawki-chat-toggle:focus-visible,.lawki-chat button:focus-visible,.lawki-chat a:focus-visible,.lawki-chat textarea:focus-visible{outline:3px solid #f4bd50;outline-offset:2px}
+.lawki-chat-panel{position:absolute;right:0;bottom:calc(100% + 10px);width:min(365px,calc(100vw - 28px));max-height:min(74vh,650px);overflow:auto;background:#fff;border:1px solid #d8e2eb;border-radius:15px;box-shadow:0 12px 35px #091d3740}
+.lawki-chat-panel[hidden]{display:none}
+.lawki-chat-header{display:flex;align-items:center;justify-content:space-between;background:#123b5b;color:#fff;padding:13px 15px;border-radius:14px 14px 0 0}
+.lawki-chat-header strong{font-size:15px}
+.lawki-chat-close{background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer;padding:0 6px}
+.lawki-chat-body{padding:16px}
+.lawki-chat-intro{background:#eef4f8;padding:12px;border-radius:10px;font-size:14px;margin:0 0 12px}
+.lawki-chat-form{display:grid;gap:10px}
+.lawki-chat-form label{font-size:13px;color:#51677b;font-weight:750}
+.lawki-chat-input{width:100%;min-height:92px;resize:vertical;border:1px solid #c5d3df;border-radius:9px;padding:11px;font:inherit;color:#24394e;background:#fff}
+.lawki-chat-send{border:0;border-radius:8px;padding:11px 13px;background:#bd2e42;color:#fff;font-weight:800;font-size:14px;cursor:pointer}
+.lawki-chat-answer{margin-top:14px;border-top:1px solid #e0e8ef;padding-top:14px}
+.lawki-chat-answer[hidden]{display:none}
+.lawki-chat-answer h3{font-size:14px;color:#123b5b;margin:0 0 6px}
+.lawki-chat-answer p{font-size:14px;margin:0 0 10px;white-space:pre-line}
+.lawki-chat-line{display:block;text-align:center;background:#16834f;color:white!important;padding:12px 10px;text-decoration:none;border-radius:9px;font-weight:850;font-size:15px}
+.lawki-chat-copy{display:block;width:100%;margin-top:8px;border:1px solid #d1dce5;color:#234d69;background:#f4f8fb;border-radius:8px;padding:9px;cursor:pointer}
+.lawki-chat-note{font-size:11px!important;color:#738292;margin:10px 0 0!important;line-height:1.5}
+.lawki-chat-status{font-size:12px;color:#366c55;min-height:18px;margin:6px 0 0}
+@media(max-width:640px){.lawki-chat{right:12px;bottom:calc(74px + env(safe-area-inset-bottom,0px))}.lawki-chat-toggle{padding:10px 13px;font-size:13px}.lawki-chat-panel{max-height:min(73vh,560px)}}
