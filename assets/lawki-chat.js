@@ -103,7 +103,7 @@ function answerFor(q,t,isNew){
  if(isNew)return t.lead+'\n\n'+nextQuestion(t,q);
  if(/^(我是)?(雇主|老闆|人資|主管|勞工|員工|勞方|資方)$/.test(q.replace(/\s/g,'')))return '了解，已記下您的身分'+roleText+'。'+t.lead+'\n\n'+nextQuestion(t,q);
  if(/準備哪些資料|需要什麼資料|證據/.test(q))return '延續「'+t.name+'」'+roleText+'，目前最重要的是核對：\n• '+t.factors.join('\n• ')+'\n\n'+nextQuestion(t,q);
- if(/處理步驟|如何處理|怎麼處理/.test(q))return '針對「'+t.name+'」'+roleText+'，可以先這樣做：\n1. '+t.actions.map((x,i)=>i===0?x:String(i+1)+'. '+x).join('\n')+'\n\n'+nextQuestion(t,q);
+ if(/處理步驟|如何處理|怎麼處理/.test(q))return '針對「'+t.name+'」'+roleText+'，可以先這樣做：\n1. '+t.actions.map((x,i)=>(i+1)+'. '+x).join('\n')+'\n\n'+nextQuestion(t,q);
  if(/多少|幾天|怎麼算|金額|罰多少|幾倍|多久|期限/.test(q))return '您追問的是「'+t.name+'」的金額或期限'+roleText+'。要計算前，應確認適用制度、事件日期及薪資、年資或工時等資料；資訊不足時不宜直接報出數字。'+nextQuestion(t,q);
  if(/如果|已經|但是|可是|拒絕|不同意|沒有|沒|還|又/.test(q))return '承接前面「'+t.name+'」的問題'+roleText+'：您新補充的情況會影響判斷，不能直接沿用上一題的結論。'+t.lead+'\n\n'+nextQuestion(t,q);
  return '針對「'+t.name+'」的延伸問題'+roleText+'：'+t.lead+'\n\n'+nextQuestion(t,q);
