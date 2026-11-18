@@ -34,7 +34,7 @@
 .lawki-chat-answer-text ul,.lawki-chat-answer-text ol{margin:8px 0 14px;padding-left:23px}
 .lawki-chat-answer-text li{margin:0 0 9px}
 .lawki-chat-pager{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:15px 0 14px;border-top:1px solid #e6eef4;padding-top:13px}
-.lawki-chat-page-button{background:#eef4f8;border:1px solid #cbd9e4;border-radius:8px;padding:9px 13px;font:700 13px/1.4 inherit;color:#174767;cursor:pointer;min-width:83px}
+.lawki-chat-page-button{background:#eef4f8;border:1px solid #cbd9e4;border-radius:8px;padding:9px 13px;font-weight:700;font-size:13px;line-height:1.4;font-family:inherit;color:#174767;cursor:pointer;min-width:83px}
 .lawki-chat-page-button:disabled{opacity:.35;cursor:default}
 .lawki-chat-page-next:not(:disabled){background:#173f60;color:#fff;border-color:#173f60}
 .lawki-chat-page-count{color:#677d90;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
