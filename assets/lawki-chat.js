@@ -45,87 +45,86 @@ const topics=[
   factors:['通知的機關、案件類型及回覆期限','雙方目前的爭點、相關契約與出勤薪資紀錄','是否已經進行調解、調查或其他法律程序'],
   actions:['保留所有通知與收件日期，確認期限','依爭議事項整理資料，避免修改或銷毀紀錄','交由真人顧問協助確認程序、文件與處理方向']}
 ];
-const general={
- name:'勞資問題初步分析',
- lead:'您提出的是勞資相關問題，但目前資訊還不足以判斷誰有法律上的權利或責任。建議先確認勞雇關係、事件經過與相關文件，再由台灣勞基真人顧問依個案說明。',
- factors:['您是企業主、主管還是勞工，以及所屬行業','事情何時發生、雙方目前有什麼爭議','是否有勞動契約、公告、薪資或通訊紀錄'],
- actions:['先用時間順序整理事件經過','妥善保存相關資料，暫時不要公開個人敏感資訊','點擊下方官方 LINE 聯絡真人客服，補充背景後再做判斷']
-};
-function make(tag,className,text){const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el;}
-const root=make('aside','lawki-chat');root.id='lawki-chat-widget';root.setAttribute('aria-label','台灣勞基勞資問題諮詢');
-const panel=make('section','lawki-chat-panel');panel.id='lawki-chat-panel';panel.setAttribute('aria-label','勞資問題諮詢');panel.hidden=true;
-const header=make('div','lawki-chat-header');
-const heading=make('strong','', '勞資問題專業導讀');
-const close=make('button','lawki-chat-close','×');close.type='button';close.setAttribute('aria-label','關閉諮詢視窗');header.append(heading,close);
-const body=make('div','lawki-chat-body');
-const intro=make('p','lawki-chat-intro','請描述您的問題。網站會提供 3 頁初步說明：判斷方向、需確認的條件，以及處理建議。第一頁立即附上官方 LINE 真人客服。');
-const form=make('form','lawki-chat-form');
-const label=make('label','','請輸入您的問題');label.htmlFor='lawki-chat-input';
-const input=make('textarea','lawki-chat-input');input.id='lawki-chat-input';input.maxLength=700;input.required=true;input.placeholder='例如：員工下班後回訊息算加班嗎？';
-const send=make('button','lawki-chat-send','查看完整解答');send.type='submit';
-form.append(label,input,send);
-const answer=make('section','lawki-chat-answer');answer.id='lawki-chat-answer';answer.hidden=true;answer.setAttribute('aria-label','勞資問題初步解答');
-const pageLabel=make('div','lawki-chat-page-label');pageLabel.setAttribute('aria-live','polite');
-const answerTitle=make('h3','lawki-chat-answer-title');
-const answerBody=make('div','lawki-chat-answer-text');answerBody.setAttribute('aria-live','polite');
-const pager=make('nav','lawki-chat-pager');pager.setAttribute('aria-label','答案分頁');
-const prev=make('button','lawki-chat-page-button','上一頁');prev.type='button';
-const counter=make('span','lawki-chat-page-count');
-const next=make('button','lawki-chat-page-button lawki-chat-page-next','下一頁');next.type='button';
-pager.append(prev,counter,next);
-const line=make('a','lawki-chat-line','立即聯絡官方 LINE 真人客服');line.href='https://lin.ee/NgRW9iS';line.target='_blank';line.rel='noopener noreferrer';
-const copy=make('button','lawki-chat-copy','複製問題，貼到 LINE 給客服');copy.type='button';
-const status=make('p','lawki-chat-status');status.setAttribute('aria-live','polite');
-const note=make('p','lawki-chat-note','這是依關鍵字提供的預設法規導讀，不是 AI 即時個案判斷或正式法律意見。實際適用仍須確認現行規定及個案事實。請勿輸入身分證字號、完整個資或敏感資料；此網站不會儲存或傳送您的問題。');
-answer.append(pageLabel,answerTitle,answerBody,pager,line,copy,status,note);
-body.append(intro,form,answer);panel.append(header,body);
-const toggle=make('button','lawki-chat-toggle','💬 勞資問題諮詢');toggle.type='button';toggle.setAttribute('aria-controls','lawki-chat-panel');toggle.setAttribute('aria-expanded','false');
-root.append(panel,toggle);document.body.appendChild(root);
-let currentQuestion='',selected=general,page=0;
+
+const general={name:'一般勞資問題',lead:'這個問題需要先釐清勞雇關係與事件背景，尚無法單憑一句話判定誰有權利或責任。',factors:['當事人是雇主還是勞工','事件日期、具體行為和相關通知','契約、薪資單或出勤紀錄'],actions:['按時間整理事情經過','保存必要資料但勿公開敏感個資','交由真人顧問查核適用法規']};
+const root=document.createElement('aside');root.id='lawki-chat-widget';root.className='lawki-chat';
+root.setAttribute('aria-label','台灣勞基勞資問題諮詢');
+root.innerHTML='<section id="lawki-chat-panel" class="lawki-chat-panel" hidden aria-label="勞資問題諮詢">'
++'<div class="lawki-chat-header"><div><strong>台灣勞基｜勞資諮詢</strong><small>可以連續追問 · 初步問題分析</small></div><button type="button" class="lawki-chat-close" aria-label="關閉">×</button></div>'
++'<div class="lawki-chat-conversation" role="log" aria-label="對話紀錄" aria-live="polite"><div class="lawki-chat-bubble assistant"><p>您好！請描述勞資問題。回答後可直接接續提問，我會保留這次對話的主題與您提供的背景。</p></div></div>'
++'<div class="lawki-chat-follow"></div><div class="lawki-chat-handoff" hidden><a class="lawki-chat-line" href="https://lin.ee/NgRW9iS" target="_blank" rel="noopener noreferrer">立即聯絡官方 LINE 真人客服</a><button type="button" class="lawki-chat-copy">複製對話摘要給真人客服</button><p class="lawki-chat-status" role="status"></p></div>'
++'<form class="lawki-chat-form lawki-chat-compose"><label for="lawki-chat-input">輸入問題或接續追問</label><textarea id="lawki-chat-input" class="lawki-chat-input" rows="2" maxlength="700" placeholder="例如：員工下班後回訊息算加班嗎？" required></textarea><button type="submit" class="lawki-chat-send">送出問題</button><p class="lawki-chat-note">此為免費規則式法規導讀，非 AI 個案法律判斷。請勿輸入身分證、姓名或敏感資料；提問僅留在目前頁面，不會傳到本站伺服器。</p></form></section>'
++'<button class="lawki-chat-toggle" type="button" aria-expanded="false" aria-controls="lawki-chat-panel">💬 勞資問題諮詢</button>';
+document.body.append(root);
+const panel=root.querySelector('#lawki-chat-panel'),toggle=root.querySelector('.lawki-chat-toggle'),input=root.querySelector('#lawki-chat-input'),thread=root.querySelector('.lawki-chat-conversation'),follow=root.querySelector('.lawki-chat-follow'),handoff=root.querySelector('.lawki-chat-handoff'),status=root.querySelector('.lawki-chat-status');
+let topic=null,role='',turns=0;const history=[];
 function open(yes){panel.hidden=!yes;toggle.setAttribute('aria-expanded',String(yes));if(yes)input.focus();else toggle.focus();}
-toggle.addEventListener('click',()=>open(panel.hidden));close.addEventListener('click',()=>open(false));
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden)open(false);});
-function pickTopic(question){
- const q=question.replace(/\s+/g,'');
- return topics.find(topic=>topic.pattern.test(q))||general;
+toggle.addEventListener('click',()=>open(panel.hidden));root.querySelector('.lawki-chat-close').addEventListener('click',()=>open(false));
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden)open(false)});
+function chooseTopic(q){return topics.find(t=>t.pattern.test(q.replace(/\s+/g,'')))||null;}
+function chooseRole(q){
+ if(/我是(雇主|老闆|人資|主管)|我們公司|我的員工|我是資方/.test(q))return '雇主／主管';
+ if(/我是(員工|勞工|上班族)|我老闆|我被|我是勞方/.test(q))return '勞工';
+ return '';
 }
-function renderPage(){
- pageLabel.textContent='第 '+(page+1)+'／3 頁 · '+selected.name;
- answerBody.replaceChildren();
- if(page===0){
-  answerTitle.textContent='先說結論與判斷方向';
-  answerBody.append(make('p','',selected.lead));
-  answerBody.append(make('p','lawki-chat-inline-tip','想直接處理您的實際情況？下方可立即聯絡台灣勞基真人客服。'));
- }else if(page===1){
-  answerTitle.textContent='哪些條件會影響判斷？';
-  answerBody.append(make('p','','要更準確地分析這個問題，通常需要確認：'));
-  const ul=make('ul');
-  selected.factors.forEach(item=>ul.append(make('li','',item)));
-  answerBody.append(ul);
- }else{
-  answerTitle.textContent='建議現在怎麼處理？';
-  const ol=make('ol');
-  selected.actions.forEach(item=>ol.append(make('li','',item)));
-  answerBody.append(ol);
+function bubble(who,message,details){
+ const div=document.createElement('div');div.className='lawki-chat-bubble '+(who==='訪客'?'user':'assistant');
+ const p=document.createElement('p');p.textContent=message;div.append(p);
+ if(details){
+  const d=document.createElement('details');d.className='lawki-chat-more';
+  const s=document.createElement('summary');s.textContent='展開完整分析與處理建議';d.append(s);
+  const h=document.createElement('strong');h.textContent='還要確認的條件';d.append(h);
+  const ul=document.createElement('ul');details.factors.forEach(x=>{const li=document.createElement('li');li.textContent=x;ul.append(li)});d.append(ul);
+  const h2=document.createElement('strong');h2.textContent='建議處理步驟';d.append(h2);
+  const ol=document.createElement('ol');details.actions.forEach(x=>{const li=document.createElement('li');li.textContent=x;ol.append(li)});d.append(ol);div.append(d);
  }
- prev.disabled=page===0;next.disabled=page===2;
- counter.textContent=(page+1)+' / 3';
- status.textContent='';
+ thread.append(div);history.push({who,text:message});
+ if(history.length>30)history.shift();
+ thread.scrollTop=thread.scrollHeight;
 }
-function movePage(nextPage){
- if(nextPage<0||nextPage>2)return;
- page=nextPage;renderPage();pageLabel.scrollIntoView({block:'nearest',behavior:'smooth'});
+function suggestions(list){
+ follow.replaceChildren();list.forEach(label=>{
+  const b=document.createElement('button');b.type='button';b.className='lawki-chat-suggest';b.textContent=label;b.addEventListener('click',()=>send(label));follow.append(b);
+ });
 }
-prev.addEventListener('click',()=>movePage(page-1));next.addEventListener('click',()=>movePage(page+1));
-form.addEventListener('submit',event=>{
- event.preventDefault();
- const q=input.value.trim();if(!q)return;
- currentQuestion=q;selected=pickTopic(q);page=0;renderPage();answer.hidden=false;
- panel.scrollTop=Math.min(answer.offsetTop, panel.scrollHeight);
-});
-copy.addEventListener('click',async()=>{
- if(!currentQuestion)return;
- try{await navigator.clipboard.writeText(currentQuestion);status.textContent='已複製問題，請切換到 LINE 對話貼上傳送。';}
- catch(err){status.textContent='無法自動複製，請手動複製原問題。';}
+function nextQuestion(t,q){
+ if(!role)return '請問您是雇主／主管，還是勞工？我可以接著從您的角度說明。';
+ const map={
+ '工時與加班費':'這段工作發生在平日下班後、休息日，還是國定假日？有沒有主管要求工作的紀錄？',
+ '資遣與解僱':'目前只是口頭通知，還是已有書面終止通知？',
+ '薪資與扣款':'主要爭議的是底薪、獎金、津貼，還是其他扣款？',
+ '請假與休假':'您申請的是什麼假別？公司已經拒絕了嗎？',
+ '職災與補償':'事故發生在工作中還是上下班途中？是否已有就醫紀錄？'
+ };
+ return map[t.name]||'請問事件現在進行到哪個階段？是否已有書面通知或證據？';
+}
+function answerFor(q,t,isNew){
+ const roleText=role?'（依您提供的「'+role+'」角度）':'';
+ if(isNew)return t.lead+'\n\n'+nextQuestion(t,q);
+ if(/^(我是)?(雇主|老闆|人資|主管|勞工|員工|勞方|資方)$/.test(q.replace(/\s/g,'')))return '了解，已記下您的身分'+roleText+'。'+t.lead+'\n\n'+nextQuestion(t,q);
+ if(/準備哪些資料|需要什麼資料|證據/.test(q))return '延續「'+t.name+'」'+roleText+'，目前最重要的是核對：\n• '+t.factors.join('\n• ')+'\n\n'+nextQuestion(t,q);
+ if(/處理步驟|如何處理|怎麼處理/.test(q))return '針對「'+t.name+'」'+roleText+'，可以先這樣做：\n1. '+t.actions.map((x,i)=>i===0?x:String(i+1)+'. '+x).join('\n')+'\n\n'+nextQuestion(t,q);
+ if(/多少|幾天|怎麼算|金額|罰多少|幾倍|多久|期限/.test(q))return '您追問的是「'+t.name+'」的金額或期限'+roleText+'。要計算前，應確認適用制度、事件日期及薪資、年資或工時等資料；資訊不足時不宜直接報出數字。'+nextQuestion(t,q);
+ if(/如果|已經|但是|可是|拒絕|不同意|沒有|沒|還|又/.test(q))return '承接前面「'+t.name+'」的問題'+roleText+'：您新補充的情況會影響判斷，不能直接沿用上一題的結論。'+t.lead+'\n\n'+nextQuestion(t,q);
+ return '針對「'+t.name+'」的延伸問題'+roleText+'：'+t.lead+'\n\n'+nextQuestion(t,q);
+}
+function send(raw){
+ const q=raw.trim();if(!q)return;
+ bubble('訪客',q);
+ const found=chooseTopic(q),foundRole=chooseRole(q);
+ if(foundRole)role=foundRole;
+ const isNew=turns===0||!!(found&&topic&&found!==topic);
+ if(found)topic=found;if(!topic)topic=general;
+ const response=answerFor(q,topic,isNew);
+ bubble('台灣勞基初步導讀',response,topic);
+ turns++;handoff.hidden=false;status.textContent='';
+ suggestions(turns===1?['我是雇主','我是勞工','需要準備哪些資料？']:['需要準備哪些資料？','怎麼處理？','如果已經發生了呢？']);
+ input.value='';
+}
+root.querySelector('.lawki-chat-form').addEventListener('submit',e=>{e.preventDefault();send(input.value)});
+root.querySelector('.lawki-chat-copy').addEventListener('click',async()=>{
+ const transcript=history.slice(-16).map(x=>x.who+'：'+x.text).join('\n\n');
+ try{await navigator.clipboard.writeText('台灣勞基網站提問紀錄\n\n'+transcript);status.textContent='已複製對話內容，請在 LINE 貼上傳送。';}
+ catch(e){status.textContent='複製失敗，請手動複製需要的對話內容。';}
 });
 })();
