@@ -161,3 +161,10 @@ https://sam0989422478.github.io/taiwan-labor-news/
 - 檢查 2026-11-17 19:37 台灣時間的手動執行，發現新聞擷取成功但 `scripts/build_sitemap.py` 使用錯誤的 `ElementTree(root,encoding=...,xml_declaration=...)` 導致工作流程失敗，資料沒有提交。
 - 已修改為 `ElementTree(root).write(path,encoding='utf-8',xml_declaration=True)`；修正已提交，但仍需下次執行才能驗證整體成功。
 - 每日定時執行不保證一定有新文章；若無符合來源或查證條件的題材，保留舊內容。建議持續在 Actions 查看成功／失敗狀態。
+
+## 2026-11-18 網站內勞資提問＋真人客服引導（已上線程式）
+- 使用者指定：訪客在網站**只要問一個問題，第一則回答就直接附官方 LINE 真人客服連結**，避免長時間機器人對話。
+- 新增 `assets/lawki-chat.css` 與 `assets/lawki-chat.js`，在 `index.html` 與 `article.html` 引入。固定於右下方，位置在原本電話聯絡小圓鈕上方，手機可用。
+- 訪客輸入問題、按送出，即依常見勞動主題關鍵字回覆一則非個案法律建議並顯示 `https://lin.ee/NgRW9iS`「立即聯絡官方 LINE 真人客服」按鈕，以及「複製問題，貼到 LINE 給客服」。
+- **無付費 AI API**、無遠端後端、無送出或儲存訪客的提問文字。這是固定規則的 FAQ 回覆，不得宣稱 AI 已理解任何自由形式問題，也不能宣稱網站能把提問自動送進 LINE；必須由訪客開啟 LINE 並貼上。
+- 每日新聞更新流程及純文字頁面維持原狀。需確認 GitHub Pages 最新部署完成，然後用手機測試開關聊天室、回答、LINE 跳轉及與電話懸浮鈕是否重疊。
