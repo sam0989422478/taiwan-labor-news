@@ -1,7 +1,7 @@
 /* 台灣勞基：網站內的免費問題初步回覆＋官方 LINE 真人客服 */
 .lawki-chat{position:fixed;right:15px;bottom:calc(82px + env(safe-area-inset-bottom,0px));z-index:10001;font:15px/1.55 system-ui,-apple-system,"Noto Sans TC",sans-serif;color:#24394e}
 .lawki-chat *{box-sizing:border-box}
-.lawki-chat-toggle{display:flex;align-items:center;gap:8px;background:#123b5b;color:#fff;border:0;border-radius:28px;padding:10px 14px;min-height:46px;box-shadow:0 4px 15px #08213b44;cursor:pointer;font:700 14px/1.4 inherit}
+.lawki-chat-toggle{display:flex;align-items:center;gap:8px;background:#123b5b;color:#fff;border:0;border-radius:28px;padding:10px 14px;min-height:46px;box-shadow:0 4px 15px #08213b44;cursor:pointer;font-weight:700;font-size:14px;line-height:1.4;font-family:inherit}
 .lawki-chat-toggle:focus-visible,.lawki-chat button:focus-visible,.lawki-chat a:focus-visible,.lawki-chat textarea:focus-visible{outline:3px solid #f4bd50;outline-offset:2px}
 .lawki-chat-panel{position:absolute;right:0;bottom:calc(100% + 10px);width:min(365px,calc(100vw - 28px));max-height:min(74vh,650px);overflow:auto;background:#fff;border:1px solid #d8e2eb;border-radius:15px;box-shadow:0 12px 35px #091d3740}
 .lawki-chat-panel[hidden]{display:none}
