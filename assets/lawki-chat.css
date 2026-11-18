@@ -45,3 +45,33 @@
  .lawki-chat-page-button{padding:9px}
  .lawki-chat-body{padding:14px}
 }
+
+/* Multi-turn chat */
+.lawki-chat-panel{width:min(400px,calc(100vw - 25px));height:min(74vh,670px);max-height:min(74vh,670px);display:flex;flex-direction:column;overflow:hidden}
+.lawki-chat-panel[hidden]{display:none}
+.lawki-chat-header{flex:0 0 auto}
+.lawki-chat-header small{display:block;color:#c4d7e7;font-size:11px;font-weight:400;margin-top:2px}
+.lawki-chat-conversation{flex:1;min-height:100px;overflow:auto;padding:13px;display:flex;flex-direction:column;gap:11px;background:#f3f6fa;overscroll-behavior:contain}
+.lawki-chat-bubble{max-width:96%;padding:11px 12px;border-radius:13px;background:#fff;border:1px solid #e1e7ef;color:#253f54;font-size:14px;line-height:1.7;overflow-wrap:anywhere}
+.lawki-chat-bubble p{margin:0;white-space:pre-line}
+.lawki-chat-bubble.user{align-self:flex-end;max-width:88%;background:#dceef5;border-color:#c6dce8;color:#20465f}
+.lawki-chat-bubble.assistant{align-self:flex-start}
+.lawki-chat-more{margin-top:10px;border-top:1px solid #e2e8ef;padding-top:8px;font-size:13px}
+.lawki-chat-more summary{cursor:pointer;color:#155c82;font-weight:800;padding:5px 0}
+.lawki-chat-more strong{display:block;margin:9px 0 5px;color:#174260}
+.lawki-chat-more ul,.lawki-chat-more ol{padding-left:20px;margin:5px 0 10px}
+.lawki-chat-more li{margin:5px 0}
+.lawki-chat-follow{display:flex;gap:6px;overflow-x:auto;padding:8px 10px 4px;background:#fff;flex:0 0 auto}
+.lawki-chat-suggest{white-space:nowrap;padding:7px 10px;border:1px solid #ccd9e2;border-radius:20px;background:#f5f9fc;color:#174666;font-weight:650;font-size:12px;font-family:inherit;cursor:pointer}
+.lawki-chat-handoff{padding:6px 12px 8px;flex:0 0 auto;background:#fff}
+.lawki-chat-handoff[hidden]{display:none}
+.lawki-chat-handoff .lawki-chat-line{padding:9px;font-size:13px;margin:0}
+.lawki-chat-handoff .lawki-chat-copy{padding:5px;font-size:12px;margin-top:3px}
+.lawki-chat-handoff .lawki-chat-status{font-size:11px;min-height:0;margin:4px 0 0}
+.lawki-chat-compose{display:block;flex:0 0 auto;border-top:1px solid #e2e8ee;background:#fff;padding:9px 11px}
+.lawki-chat-compose label{display:block;margin-bottom:4px}
+.lawki-chat-input-row{display:flex;gap:8px;align-items:stretch}
+.lawki-chat-compose .lawki-chat-input{height:63px;min-height:63px;resize:none;font-size:13px;line-height:1.5;flex:1;min-width:0;padding:9px}
+.lawki-chat-compose .lawki-chat-send{width:68px;flex:none;font-size:13px;padding:7px}
+.lawki-chat-compose .lawki-chat-note{font-size:10px!important;line-height:1.35;margin:6px 0 0!important}
+@media(max-width:640px){.lawki-chat-panel{width:min(390px,calc(100vw - 24px));height:min(70dvh,610px);max-height:min(70dvh,610px)}.lawki-chat-bubble{font-size:13px;padding:10px 11px}}
