@@ -183,3 +183,9 @@ https://sam0989422478.github.io/taiwan-labor-news/
 - 一般性導讀可點「展開完整分析與處理建議」，包含原有 10 類常見勞務主題的確認條件與步驟。下方有快速追問按鈕，LINE 官方真人客服連結在首次回答後即顯示，並提供「複製對話摘要給真人客服」，方便接手處理。
 - 此功能仍是**免費關鍵字/模板回覆**，並非真正具自然語意理解能力的 AI；對於複雜個案或具體數字/時效不得假稱可可靠判斷，應交由真人顧問。使用者未同意付費 API，不能擅自增加 API/費用。
 - 新版 CSS：`assets/lawki-chat.css`；首頁與文章頁都帶有查詢版本 `?v=20261118-thread2`，避免瀏覽器快取舊檔。
+
+## 2026-11-21 SEO 排查與修復
+- 使用者反映 SEO「不見了」。檢查儲存庫發現：`robots.txt`、`sitemap.xml`、Google 驗證檔 `google453320c54a20658d.html`、首頁 title/description/canonical/og/robots 均仍存在，**並未被刪除**。
+- Google 公開搜尋 `site:sam0989422478.github.io/taiwan-labor-news/` 未找到明確索引結果（查詢工具未能正常開啟公開 GitHub Pages）；不能藉此宣稱網站已被 Google 移除，也不能聲稱 Search Console 驗證失效，需從使用者的 Search Console 檢查「網頁索引」和「Sitemap」報表。
+- SEO 優化：首頁新增 `NewsMediaOrganization` JSON-LD；文章頁新增 robots/canonical/OG 初始 meta，並在讀取文章後以 JS 更新每篇文章的 title、description、canonical、OG 和 `NewsArticle` JSON-LD。
+- **剩餘限制**：文章頁仍是共用 `article.html?id=...` 且內容由 JS 讀取，搜尋引擎索引不如預先生成獨立 HTML 可靠。下一階段可考慮建置時預先產生各篇獨立 HTML，並讓 Sitemap 指向獨立頁面，避免所有文章的初始 HTML 元資料相同。不要承諾 Google 必然收錄或排名。
