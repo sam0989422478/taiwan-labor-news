@@ -130,7 +130,7 @@ function render(){
  const totalPages=Math.ceil(list.length/pageSize);
  currentPage=Math.max(1,Math.min(currentPage,totalPages));
  const shown=list.slice((currentPage-1)*pageSize,currentPage*pageSize);
- shown.forEach(n=>{const a=text('article','','story'),stripe=text('div','','stripe'),body=text('div','','story-body'),t=text('span',n.category,'tag'),h=text('h3',n.title),desc=text('p',n.summary),foot=text('div','','story-bottom'),meta=text('span',(n.date||'')+' · 台灣勞基編輯整理'),link=text('a','閱讀本站報導');link.href='article.html?id='+encodeURIComponent(n.id);foot.append(meta,link);body.append(t,h,desc,foot);a.append(stripe,body);results.append(a)});
+ shown.forEach(n=>{const a=text('article','','story'),stripe=text('div','','stripe'),body=text('div','','story-body'),t=text('span',n.category,'tag'),h=text('h3',n.title),desc=text('p',n.summary),foot=text('div','','story-bottom'),meta=text('span',(n.date||'')+' · 台灣勞基編輯整理'),link=text('a','閱讀本站報導');link.href='stories/'+encodeURIComponent(n.id)+'.html';foot.append(meta,link);body.append(t,h,desc,foot);a.append(stripe,body);results.append(a)});
  count.textContent='共 '+list.length+' 篇 · 每頁 '+pageSize+' 篇';
  if(totalPages<=1)return;
  function addButton(label,page,disabled,active){
