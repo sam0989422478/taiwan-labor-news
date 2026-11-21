@@ -189,3 +189,13 @@ https://sam0989422478.github.io/taiwan-labor-news/
 - Google 公開搜尋 `site:sam0989422478.github.io/taiwan-labor-news/` 未找到明確索引結果（查詢工具未能正常開啟公開 GitHub Pages）；不能藉此宣稱網站已被 Google 移除，也不能聲稱 Search Console 驗證失效，需從使用者的 Search Console 檢查「網頁索引」和「Sitemap」報表。
 - SEO 優化：首頁新增 `NewsMediaOrganization` JSON-LD；文章頁新增 robots/canonical/OG 初始 meta，並在讀取文章後以 JS 更新每篇文章的 title、description、canonical、OG 和 `NewsArticle` JSON-LD。
 - **剩餘限制**：文章頁仍是共用 `article.html?id=...` 且內容由 JS 讀取，搜尋引擎索引不如預先生成獨立 HTML 可靠。下一階段可考慮建置時預先產生各篇獨立 HTML，並讓 Sitemap 指向獨立頁面，避免所有文章的初始 HTML 元資料相同。不要承諾 Google 必然收錄或排名。
+
+## 2026-11-21 Google 找不到網站：索引改善措施
+- 使用者反映在 Google 搜尋「台灣勞基新聞網」找不到網站。公網搜尋 `site:sam0989422478.github.io/taiwan-labor-news/` 無可確認的結果，工具無法可靠開啟公開 GitHub Pages URL，因此**無法獨立確認 Google Search Console 的覆蓋狀態或確定收錄失敗原因**。
+- 確認儲存庫原本具有 `robots.txt` (允許所有爬蟲)、驗證檔 `google453320c54a20658d.html`、正常 `sitemap.xml` 以及首頁 title/description/robots/canonical；不是整套 SEO 消失。
+- 重大 SEO 結構弱點：原本 27 篇新聞共用 `article.html?id=...`，HTML 初始狀態只出現通用標題與 JavaScript 載入器，對搜尋引擎發現及辨識文章不理想。
+- **已新增 `scripts/build_articles.py`**：未來每次新聞排程跑完，會輸出 `stories/<id>.html` 靜態完整文章 HTML，包含獨立 title、description、canonical、Open Graph、JSON-LD Article、文章標題與正文、來源連結、LINE 真人客服。
+- **已立即建立目前 27 篇 `stories/*.html`**，確認 GitHub 目錄 27 檔；`sitemap.xml` 改為 27 篇實際獨立文章 URL + 首頁，共 28 條；首頁新聞卡片改連結 `stories/<id>.html`。
+- **每日 Actions 工作流程**新增在更新新聞後執行 `python scripts/build_articles.py`，然後重建 Sitemap 並提交 `stories/`；下一次排程執行才可驗證這段腳本在 GitHub runner 正常。
+- 目前 GitHub Pages 部署仍可能處於 queued/pending，勿宣稱已公開生效。Google 是否索引、何時出現排名**無法保證**。請使用者於 Google Search Console 的「網址審查」輸入首頁、再輸入一篇 `stories/` 正文，並檢查「頁面索引／Sitemap」及「要求建立索引」；使用者之前已手動完成 Search Console 網站驗證和提交 Sitemap。
+- 仍有可能影響收錄的品質問題：很多 RSS 導讀文章內容相似且較淺，標題不精煉；要再提升收錄品質，應加強來源查證、實質編輯分析，避免大量重複模板文章，不能只靠 SEO meta 保證收錄。
