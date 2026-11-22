@@ -1,6 +1,142 @@
 {
-  "updated_at": "2026-11-21T10:04:04.338746+08:00",
+  "updated_at": "2026-11-22T09:59:45.890585+08:00",
   "articles": [
+    {
+      "id": "052d3e8b5b95826a",
+      "title": "工資工時焦點｜2027勞保費率｜上班族、雇主保費差額與30,900元投保薪資級距",
+      "date": "2026-11-22",
+      "published_at": "2026-11-22T09:59:48.639231+08:00",
+      "category": "工資工時",
+      "source": "newsdaily.tw",
+      "source_title": "2027勞保費率｜上班族、雇主保費差額與30,900元投保薪資級距 - newsdaily.tw",
+      "source_url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE4yMWZkLVZQcWk2WXBJUWlOTW0xanEteEl4Z0pRMURuWGxZdnVMbE1mUWFnUEVReHBCbE9xYmI4VnBmWkQ1Ym1FbEs1eENRUQ?oc=5",
+      "summary": "近期勞動議題受到關注。根據「newsdaily.tw」於 2026-11-22 發布的新聞標題，相關焦點為「2027勞保費率｜上班族、雇主保費差額與30,900元投保薪資級距」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「newsdaily.tw」於 2026-11-22 發布的新聞標題，相關焦點為「2027勞保費率｜上班族、雇主保費差額與30,900元投保薪資級距」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認公司現行工時、排班及出勤紀錄是否完整",
+            "檢查薪資項目與相關給付的計算方式",
+            "如涉及新制，應先核對主管機關公布的適用日期"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：newsdaily.tw；來源日期：2026-11-22。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
+    {
+      "id": "4dff9b21a9316568",
+      "title": "政策法規焦點｜工團要求雇主提撥率至12% 勞動部發聲！",
+      "date": "2026-11-21",
+      "published_at": "2026-11-22T09:59:48.639250+08:00",
+      "category": "政策法規",
+      "source": "三立新聞網SETN.com",
+      "source_title": "工團要求雇主提撥率至12% 勞動部發聲！ - 三立新聞網SETN.com",
+      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9pU1hsckhVLUFLMTJIdERPc1RrUmVMRjZaSUpJU2w2bnhxeUsydnNnRWQxRkNwQkdVS0FIVzd2OExvbFRoa0JmNtIBTEFVX3lxTE5lbERDRDJNbFZlX1V5bUprZ25nVlY5UXYzSVZLc2p4eVhoN2J1SzlZSXVaVGdZbUk3bTBHc3hzOFRSZGhlTFY5VTBxeUs?oc=5",
+      "summary": "近期勞動議題受到關注。根據「三立新聞網SETN.com」於 2026-11-21 發布的新聞標題，相關焦點為「工團要求雇主提撥率至12% 勞動部發聲！」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「三立新聞網SETN.com」於 2026-11-21 發布的新聞標題，相關焦點為「工團要求雇主提撥率至12% 勞動部發聲！」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認政策目前處於提案、修法或施行哪個階段",
+            "盤點公司制度可能受影響的項目",
+            "依主管機關正式公告調整內部管理"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：三立新聞網SETN.com；來源日期：2026-11-21。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
+    {
+      "id": "2a6828b47be70c8f",
+      "title": "工資工時焦點｜臺灣基本工資調升帶動門檻 外籍投資移民2027年起月收須達6.18萬",
+      "date": "2026-11-20",
+      "published_at": "2026-11-22T09:59:48.639306+08:00",
+      "category": "工資工時",
+      "source": "LIFE 生活網",
+      "source_title": "臺灣基本工資調升帶動門檻 外籍投資移民2027年起月收須達6.18萬 - LIFE 生活網",
+      "source_url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxOcjBYSUtRYzdlZGZVakItMS1UMEZVeFM0LWptejY0WmpwQ3F6U25WUVUtc2tBVWdtLWxwTzk0WGY3akJ1c2haU3FyYThyX2NSVVZwcnRUb3NtYlF3N0ZQald2YU5PVHN4azZOSzVEdkxPNU1yTmxfTGZMaVRYSEJ3cS1iVV80N0tLRWpKeFBfS29hOW1EeHZoVkc1N19EM1NaQTBOZlQ5UWtlMXVESy1wN20tUDVMX3dkQThBUDFxbGoyZWlYN2hLdVVBYWxxbF9mSG43aFp5OGtLT0pZRFRXNHA3YzUtQkhlSC1LTGM1YW5wd216OUg4WDY4Q2RHLXI5RzNZc2FKUm11SzJrOHlhVDdEUVZpZUtIUDlCMXdUQXU1Sy1vWC1LWXROZUxQV3JsLVdYRXFiYk03ZF81YXFlWXhJUGdHWUFaejA0TjNVVDNGQUtGVFJGSGJhaHdzTE9VMk53Y2l0MG1CM3E2RUF3?oc=5",
+      "summary": "近期勞動議題受到關注。根據「LIFE 生活網」於 2026-11-20 發布的新聞標題，相關焦點為「臺灣基本工資調升帶動門檻 外籍投資移民2027年起月收須達6.18萬」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「LIFE 生活網」於 2026-11-20 發布的新聞標題，相關焦點為「臺灣基本工資調升帶動門檻 外籍投資移民2027年起月收須達6.18萬」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認公司現行工時、排班及出勤紀錄是否完整",
+            "檢查薪資項目與相關給付的計算方式",
+            "如涉及新制，應先核對主管機關公布的適用日期"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：LIFE 生活網；來源日期：2026-11-20。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
+    {
+      "id": "cd908044988329b0",
+      "title": "政策法規焦點｜3行業減班補貼辦到2027年4月底，跨年上限與90日申請期限怎麼算？",
+      "date": "2026-11-20",
+      "published_at": "2026-11-22T09:59:48.639301+08:00",
+      "category": "政策法規",
+      "source": "LIFE 生活網",
+      "source_title": "3行業減班補貼辦到2027年4月底，跨年上限與90日申請期限怎麼算？ - LIFE 生活網",
+      "source_url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxQaWRVSlNPekoyM1hJQlFJbHFYSVRGcU9Hd0VQdzMydERlNVFWUFBMUTBrZ0oya2tyam5PSjV3QnZHOGRNNjVCdnNYNm9sdmRONzNBbmEzUExjcVBsNE9ibUhBS29hYVlJcTBUNXdGSVd4dGt4bTMxVFpOa0VfQXVNMG0tV3lqY2RfYlREVFRwZFlzUHRlNzFmaEsxVlhtTnE2Rl9vYjNUMXlvX1o5ZWk1QktfY2JiQ2piQWtlcXZ1QW9GNklzVTV0ZEZ3ZkQ5d2N5NGJSOFVJNFNDOVdZZGJXSXV1YVU4TnRUakZnd00yS3RaWGhURzFNMFg1V1Ntal83Qk1jNm83UUNVc1puNGFtdk9jTmpjeEc5d0hWZURuLWlxVnZMMk1RbVdETVprQWtkR1BoOFZGTE16UGxwYWx6a3llUUNKT0htLWhLa2pCMA?oc=5",
+      "summary": "近期勞動議題受到關注。根據「LIFE 生活網」於 2026-11-20 發布的新聞標題，相關焦點為「3行業減班補貼辦到2027年4月底，跨年上限與90日申請期限怎麼算？」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「LIFE 生活網」於 2026-11-20 發布的新聞標題，相關焦點為「3行業減班補貼辦到2027年4月底，跨年上限與90日申請期限怎麼算？」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認政策目前處於提案、修法或施行哪個階段",
+            "盤點公司制度可能受影響的項目",
+            "依主管機關正式公告調整內部管理"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：LIFE 生活網；來源日期：2026-11-20。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
     {
       "id": "fc55d17576624b5f",
       "title": "職安職災焦點｜馬偕急診醫中風「申請職災遭駁回」心寒離職！石崇良承諾3個月內給報告 | 三立新聞網",
