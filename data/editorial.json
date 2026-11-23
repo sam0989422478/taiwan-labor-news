@@ -1,6 +1,74 @@
 {
-  "updated_at": "2026-11-22T09:59:45.890585+08:00",
+  "updated_at": "2026-11-23T10:10:10.567502+08:00",
   "articles": [
+    {
+      "id": "17b3b17b5b922e77",
+      "title": "工資工時焦點｜2027勞保首級調至30,900元 約306萬人投保薪資將逕調",
+      "date": "2026-11-22",
+      "published_at": "2026-11-23T10:10:14.654434+08:00",
+      "category": "工資工時",
+      "source": "maygoddejia.com.tw",
+      "source_title": "2027勞保首級調至30,900元 約306萬人投保薪資將逕調 - maygoddejia.com.tw",
+      "source_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB1ZzNqZV83ZGVndXUxSC04RE5TWWxCdHVER1NITUF1M0V4c1pUdUFGak45Qmd0c3pLV0N2b1dEcGVwazhrUDBLcGhOTl9UV1dIVjh2NE9QMEUzOHNpQjVyTENBb1YySVdJRHpTc3BzMA?oc=5",
+      "summary": "近期勞動議題受到關注。根據「maygoddejia.com.tw」於 2026-11-22 發布的新聞標題，相關焦點為「2027勞保首級調至30,900元 約306萬人投保薪資將逕調」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「maygoddejia.com.tw」於 2026-11-22 發布的新聞標題，相關焦點為「2027勞保首級調至30,900元 約306萬人投保薪資將逕調」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認公司現行工時、排班及出勤紀錄是否完整",
+            "檢查薪資項目與相關給付的計算方式",
+            "如涉及新制，應先核對主管機關公布的適用日期"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：maygoddejia.com.tw；來源日期：2026-11-22。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
+    {
+      "id": "5f200991713d2476",
+      "title": "工資工時焦點｜2027勞保費率｜上班族、雇主保費差額與30,900元投保薪資級距",
+      "date": "2026-11-22",
+      "published_at": "2026-11-23T10:10:14.654416+08:00",
+      "category": "工資工時",
+      "source": "PChome Online 股市",
+      "source_title": "2027勞保費率｜上班族、雇主保費差額與30,900元投保薪資級距 - PChome Online 股市",
+      "source_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQcVFnME1XLVR5b2Q4M0ZSTkxLUHU3RUFJNjNQMEtsMVYzVlBwa3phczV3ZUhONkswd1Zaekh1VS1CSzRWOTNnbzJBV0JTamhieXEyeUp1RTN3VWVYVnY2Q3luSnR6aG5ab0V4X1RfNHUyWHVBSmthWkRGRTFJVEFhdQ?oc=5",
+      "summary": "近期勞動議題受到關注。根據「PChome Online 股市」於 2026-11-22 發布的新聞標題，相關焦點為「2027勞保費率｜上班族、雇主保費差額與30,900元投保薪資級距」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「PChome Online 股市」於 2026-11-22 發布的新聞標題，相關焦點為「2027勞保費率｜上班族、雇主保費差額與30,900元投保薪資級距」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認公司現行工時、排班及出勤紀錄是否完整",
+            "檢查薪資項目與相關給付的計算方式",
+            "如涉及新制，應先核對主管機關公布的適用日期"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：PChome Online 股市；來源日期：2026-11-22。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
     {
       "id": "052d3e8b5b95826a",
       "title": "工資工時焦點｜2027勞保費率｜上班族、雇主保費差額與30,900元投保薪資級距",
