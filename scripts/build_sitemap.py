@@ -12,10 +12,12 @@ def add(url,lastmod=None):
     SubElement(entry,"loc").text=url
     if lastmod: SubElement(entry,"lastmod").text=lastmod[:10]
 add(BASE)
+add(BASE+"about.html")
+add(BASE+"faq.html")
 for item in entries:
     identifier=item.get("id","")
     if identifier:
         add(BASE+"stories/"+quote(identifier,safe="")+".html",item.get("date"))
 indent(root,space="  ")
 ElementTree(root).write(ROOT/"sitemap.xml",encoding="utf-8",xml_declaration=True)
-print(f"Sitemap entries: {len(entries)+1}")
+print(f"Sitemap entries: {len(entries)+3}")
