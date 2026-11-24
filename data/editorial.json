@@ -1,6 +1,142 @@
 {
-  "updated_at": "2026-11-23T10:10:10.567502+08:00",
+  "updated_at": "2026-11-24T10:10:36.306919+08:00",
   "articles": [
+    {
+      "id": "865d490bac45eed8",
+      "title": "政策法規焦點｜下班後主管訊息轟炸怎辦？勞動部新規上路了",
+      "date": "2026-11-23",
+      "published_at": "2026-11-24T10:10:39.592636+08:00",
+      "category": "政策法規",
+      "source": "東森新聞",
+      "source_title": "下班後主管訊息轟炸怎辦？勞動部新規上路了 - 東森新聞",
+      "source_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE14aFFST2NhVjVJa3BKUUhUMm1qelNGcFJ0b1phSHBvRjIzSzVkSGdmZGVIN1Zrb3VSR1lqSF9wMlNBQTlYclZlU1ZRNkhTTHB5eTRacA?oc=5",
+      "summary": "近期勞動議題受到關注。根據「東森新聞」於 2026-11-23 發布的新聞標題，相關焦點為「下班後主管訊息轟炸怎辦？勞動部新規上路了」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「東森新聞」於 2026-11-23 發布的新聞標題，相關焦點為「下班後主管訊息轟炸怎辦？勞動部新規上路了」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認政策目前處於提案、修法或施行哪個階段",
+            "盤點公司制度可能受影響的項目",
+            "依主管機關正式公告調整內部管理"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：東森新聞；來源日期：2026-11-23。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
+    {
+      "id": "31bc15be61b6875c",
+      "title": "政策法規焦點｜下班傳LINE交辦明天的事NG！勞動部增訂範本 非緊急不得打擾",
+      "date": "2026-11-23",
+      "published_at": "2026-11-24T10:10:39.592632+08:00",
+      "category": "政策法規",
+      "source": "TVBS新聞網",
+      "source_title": "下班傳LINE交辦明天的事NG！勞動部增訂範本 非緊急不得打擾 - TVBS新聞網",
+      "source_url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBMb3N3LXJ6X3ZocVN5WUxkZ244UXlwcE5OYW1KazFnanNlODF6akxrOEFYdkg5cm0wNkR3TlFxYTBEM3BhRFp6bC1jbUJQUQ?oc=5",
+      "summary": "近期勞動議題受到關注。根據「TVBS新聞網」於 2026-11-23 發布的新聞標題，相關焦點為「下班傳LINE交辦明天的事NG！勞動部增訂範本 非緊急不得打擾」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「TVBS新聞網」於 2026-11-23 發布的新聞標題，相關焦點為「下班傳LINE交辦明天的事NG！勞動部增訂範本 非緊急不得打擾」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認政策目前處於提案、修法或施行哪個階段",
+            "盤點公司制度可能受影響的項目",
+            "依主管機關正式公告調整內部管理"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：TVBS新聞網；來源日期：2026-11-23。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
+    {
+      "id": "d2494afe93752b76",
+      "title": "政策法規焦點｜勞動部提醒雇主 未投保災保最高罰10萬元",
+      "date": "2026-11-23",
+      "published_at": "2026-11-24T10:10:39.592625+08:00",
+      "category": "政策法規",
+      "source": "經濟日報",
+      "source_title": "勞動部提醒雇主 未投保災保最高罰10萬元 - 經濟日報",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBPR0xOQXpkMTFtbnY2c2lwTGc3S2lfelphZlZqTEQ5cno3anpkS1M5anpWLTlZVm9lLUIwdXdZYmJNVmZwamgyY18yRnJsTFIxdTNraU5kQnpUUdIBX0FVX3lxTE9ER19IaHVxcC01YnFUYk5IMVdQRlljMTQ4TnFKMlpaTHUxbTNYWFpYd1pkTjJYOEw3WnVDY25NX01naWh2dlkxdDhnMWVMSzdIXzNfUGVUTDVxRTU0cDVn?oc=5",
+      "summary": "近期勞動議題受到關注。根據「經濟日報」於 2026-11-23 發布的新聞標題，相關焦點為「勞動部提醒雇主 未投保災保最高罰10萬元」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「經濟日報」於 2026-11-23 發布的新聞標題，相關焦點為「勞動部提醒雇主 未投保災保最高罰10萬元」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認政策目前處於提案、修法或施行哪個階段",
+            "盤點公司制度可能受影響的項目",
+            "依主管機關正式公告調整內部管理"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：經濟日報；來源日期：2026-11-23。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
+    {
+      "id": "20e19112f44e2b12",
+      "title": "工資工時焦點｜115年投票日勞工出缺勤與薪資注意事項",
+      "date": "2026-11-23",
+      "published_at": "2026-11-24T10:10:39.592604+08:00",
+      "category": "工資工時",
+      "source": "傑報人力資源服務集團",
+      "source_title": "115年投票日勞工出缺勤與薪資注意事項 - 傑報人力資源服務集團",
+      "source_url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQSVVad3l5UnNjV2dSSl95eTlVZ2hwUHB4cmxFTWxIWTAxbFJaa0F3V3FFNzhYUm1wSDU3M2Y0dXZpUmZ4QjNLRW5PY0F5Q0dYWXRxMHZ3ZkNGS09uRlhONGhMbDBQOFVMT2w4LThiUWp2RzBOUXJQY1h1emhNU3NxajB6bFlrQVFkcnA1Z3BpUXNwZVFackVtYWRUZ0hfbGxlMV8tUnFZLS1ocHVmSXh5dk05anFPR3htZDlzcWxSdmo4TldJWjJaaEpVNUEwWnBGNzh3dEp3ME9sOUVrNldTUHRMYzhKTkx5VVl0clNoWVcwbnAycmJrTlN1ZzBLVUpvcTZz?oc=5",
+      "summary": "近期勞動議題受到關注。根據「傑報人力資源服務集團」於 2026-11-23 發布的新聞標題，相關焦點為「115年投票日勞工出缺勤與薪資注意事項」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「傑報人力資源服務集團」於 2026-11-23 發布的新聞標題，相關焦點為「115年投票日勞工出缺勤與薪資注意事項」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認公司現行工時、排班及出勤紀錄是否完整",
+            "檢查薪資項目與相關給付的計算方式",
+            "如涉及新制，應先核對主管機關公布的適用日期"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：傑報人力資源服務集團；來源日期：2026-11-23。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
     {
       "id": "17b3b17b5b922e77",
       "title": "工資工時焦點｜2027勞保首級調至30,900元 約306萬人投保薪資將逕調",
