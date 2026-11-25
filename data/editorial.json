@@ -1,6 +1,142 @@
 {
-  "updated_at": "2026-11-24T10:10:36.306919+08:00",
+  "updated_at": "2026-11-25T10:17:25.364726+08:00",
   "articles": [
+    {
+      "id": "4328d35c9049b720",
+      "title": "勞資關係焦點｜台糖勞資續簽第八次團體協約 打造友善職場",
+      "date": "2026-11-24",
+      "published_at": "2026-11-25T10:17:27.614469+08:00",
+      "category": "勞資關係",
+      "source": "中華新聞雲／中華日報",
+      "source_title": "台糖勞資續簽第八次團體協約 打造友善職場 - 中華新聞雲／中華日報",
+      "source_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE14SFF6ZVU5YkdVdHY3T1dWY3MzZEhpYnN3NkphY1M0QTBZVUt0NFFfckl4SThuR0ZnUDVGem9aU1NKUmsxVk9yUzVZUUpTZXNIVWc?oc=5",
+      "summary": "近期勞動議題受到關注。根據「中華新聞雲／中華日報」於 2026-11-24 發布的新聞標題，相關焦點為「台糖勞資續簽第八次團體協約 打造友善職場」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「中華新聞雲／中華日報」於 2026-11-24 發布的新聞標題，相關焦點為「台糖勞資續簽第八次團體協約 打造友善職場」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "檢查相關勞動契約與工作規則是否清楚",
+            "保存溝通、協商及書面通知紀錄",
+            "遇到個別爭議，先核對實際事實與適用法規"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：中華新聞雲／中華日報；來源日期：2026-11-24。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
+    {
+      "id": "8b1e4d79b925ee8f",
+      "title": "政策法規焦點｜【李貴敏專欄】經濟成長創新高 企業加薪卻踩煞車 台灣經濟出了什麼問題？",
+      "date": "2026-11-24",
+      "published_at": "2026-11-25T10:17:27.614462+08:00",
+      "category": "政策法規",
+      "source": "LIFE 生活網",
+      "source_title": "【李貴敏專欄】經濟成長創新高 企業加薪卻踩煞車 台灣經濟出了什麼問題？ - LIFE 生活網",
+      "source_url": "https://news.google.com/rss/articles/CBMijwNBVV95cUxQZEk1R0h1NWpFMWVXTEdIT1pDcjlGZ2l4YXphdWhod3B1bFVkTTVWMnNvWk9GQm1OU2Zkcmc4YWlpbDNpaUZuM2t6SFFCR0JxcGdoRGpxcFQ1N2FYMnZIakkxSEh2bTZOaWtXSzA3SWhqOVRzckx6TlBjR1RQM3NFRlBSVm5nbExRT1FNcm9CZEFTRVRBUDlKZzl0TzFURF9BNVhKWll2UDBDVENDcmdIRkxXbm9jUkFsWE1Ua2hFcEdHXzRITm9NZHBpME5KM3czMjdTRGw4V29ORUF1OFloZ3RMbHMwZWhOcjRxMWptNG5aR0M2M1JxVnl4dUNldnFwZ2xtcGFlVEItT2dmcXM4VUo3bzIyYXlCY1NmQ2I3eV91UHNLeDVsZmFya3FFZXhzZXVxXy1OZ2ZKd0hPRzRnTnZYc2praE1pNENXTG1QT1ByZkFIQ3FZRktJWnJlUVlYMF9nRVhBSDB4VUdyUXFpTWNnNHR0UjA1dkhMdVFVd0NkLTVBcUxBcWJJbkJMLTA?oc=5",
+      "summary": "近期勞動議題受到關注。根據「LIFE 生活網」於 2026-11-24 發布的新聞標題，相關焦點為「【李貴敏專欄】經濟成長創新高 企業加薪卻踩煞車 台灣經濟出了什麼問題？」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「LIFE 生活網」於 2026-11-24 發布的新聞標題，相關焦點為「【李貴敏專欄】經濟成長創新高 企業加薪卻踩煞車 台灣經濟出了什麼問題？」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認政策目前處於提案、修法或施行哪個階段",
+            "盤點公司制度可能受影響的項目",
+            "依主管機關正式公告調整內部管理"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：LIFE 生活網；來源日期：2026-11-24。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
+    {
+      "id": "ede14a7d2606b4a3",
+      "title": "工資工時焦點｜下班後主管傳LINE能不回嗎？勞動部增聯繫約定 1情況算加班",
+      "date": "2026-11-24",
+      "published_at": "2026-11-25T10:17:27.614453+08:00",
+      "category": "工資工時",
+      "source": "Yahoo新聞",
+      "source_title": "下班後主管傳LINE能不回嗎？勞動部增聯繫約定 1情況算加班 - Yahoo新聞",
+      "source_url": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxOdXhfcW9tNWZZWWdLSUNOVmFjR3l4STl2QjVrSGtSMHRIRHpUTE95RE5oOXJSUEIzX05IdGtCTEVpekdVZXhaZDYzNk9YR1BoV09Qc0RUY3VHdzVrdmJINlFReHc3WlRRQzJNeEppTTl4cGpfclN5YVZabThiR1oyUHlGN0F0TEpJdVZuSERiMEdpcEpjckw5X0IyM204aU1BSHJabDlrZFdOdW02Z2I4MWFRSnRuVDMtQllvai1GdkQwcWVnR2ZvUXFSY1JmTVpLelIxelJWTzNyUnRtWDVmdFJxZkIwbGhsa1JMSm1lM3M5Tng4Y1owRVNuX2JuSGE0OTFNQ2dKdTJubEh4bWdyb2tSVlNtM3lQTzNvd3lBb003N1VvZll5MkdsU05aYzg3ajFqbFAxaDBTTjQ3MC1PeWhSOEtybF9KS2tmbVZVcVlFeWxrdDFHZW5fLUtrNzhoNjVJWHNZUWhvMlJjcTlpZg?oc=5",
+      "summary": "近期勞動議題受到關注。根據「Yahoo新聞」於 2026-11-24 發布的新聞標題，相關焦點為「下班後主管傳LINE能不回嗎？勞動部增聯繫約定 1情況算加班」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「Yahoo新聞」於 2026-11-24 發布的新聞標題，相關焦點為「下班後主管傳LINE能不回嗎？勞動部增聯繫約定 1情況算加班」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認公司現行工時、排班及出勤紀錄是否完整",
+            "檢查薪資項目與相關給付的計算方式",
+            "如涉及新制，應先核對主管機關公布的適用日期"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：Yahoo新聞；來源日期：2026-11-24。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
+    {
+      "id": "9005c84cf02e4c94",
+      "title": "政策法規焦點｜黃仁勳離職 11 天又回鍋，年資會歸零嗎？台灣離職回任的年資、特休權益一次看",
+      "date": "2026-11-24",
+      "published_at": "2026-11-25T10:17:27.614433+08:00",
+      "category": "政策法規",
+      "source": "經理人",
+      "source_title": "黃仁勳離職 11 天又回鍋，年資會歸零嗎？台灣離職回任的年資、特休權益一次看 - 經理人",
+      "source_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE81VF9YMmZLRHNqVDlyVThLdWtYNnAxb1VtbEh0aTV4UUd3ZGpKRUxuNEdBYmNFMklyT1lJUmkzOFBkV1IxVVROZjNNN3NwY01DSGVIQVR3QVoxaDhUb01r?oc=5",
+      "summary": "近期勞動議題受到關注。根據「經理人」於 2026-11-24 發布的新聞標題，相關焦點為「黃仁勳離職 11 天又回鍋，年資會歸零嗎？台灣離職回任的年資、特休權益一次看」。",
+      "body": [
+        {
+          "heading": "新聞焦點",
+          "text": "近期勞動議題受到關注。根據「經理人」於 2026-11-24 發布的新聞標題，相關焦點為「黃仁勳離職 11 天又回鍋，年資會歸零嗎？台灣離職回任的年資、特休權益一次看」。"
+        },
+        {
+          "heading": "台灣勞基觀察",
+          "text": "本篇為台灣勞基新聞網的原創導讀與企業管理提醒，依公開新聞標題及來源資訊整理；尚未獨立核實新聞全文細節，不將媒體報導、修法提案或爭議指控視為已確定的法律結論。"
+        },
+        {
+          "heading": "企業主可以先做的三件事",
+          "items": [
+            "確認政策目前處於提案、修法或施行哪個階段",
+            "盤點公司制度可能受影響的項目",
+            "依主管機關正式公告調整內部管理"
+          ]
+        },
+        {
+          "heading": "資料與查證",
+          "text": "資料來源：經理人；來源日期：2026-11-24。本文為編輯導讀，完整事實與法規適用請查閱下方原始報導及主管機關公告。"
+        }
+      ],
+      "kind": "編輯導讀"
+    },
     {
       "id": "865d490bac45eed8",
       "title": "政策法規焦點｜下班後主管訊息轟炸怎辦？勞動部新規上路了",
